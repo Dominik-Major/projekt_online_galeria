@@ -1,0 +1,32 @@
+[
+  {
+    "desktop": "img/carousel/1.JPEG",
+    "mobile": "img/home/2.jpg",
+    "class": "c_1",
+    "alt": "carousel_picture_1"
+  },
+  {
+    "desktop": "img/carousel/2.JPEG",
+    "mobile": "img/home/3.JPEG",
+    "class": "c_2",
+    "alt": "carousel_picture_2"
+  },
+  {
+    "desktop": "img/carousel/3.JPEG",
+    "mobile": "img/home/6.jpg",
+    "class": "c_3",
+    "alt": "carousel_picture_3"
+  },
+  {
+    "desktop": "img/carousel/4.JPEG",
+    "mobile": "img/home/7.jpg",
+    "class": "c_4",
+    "alt": "carousel_picture_4"
+  },
+  {
+    "desktop": "img/carousel/5.JPEG",
+    "mobile": "img/home/8.JPEG",
+    "class": "c_5",
+    "alt": "carousel_picture_5"
+  }
+]

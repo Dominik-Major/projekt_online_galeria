@@ -1,0 +1,29 @@
+[
+  {
+    "src": "img/home/1.jpg",
+    "alt": "home_picture_1",
+    "span": 2
+  },
+  {
+    "src": "img/home/2.jpg",
+    "alt": "home_picture_2"
+  },
+  {
+    "src": "img/home/3.jpg",
+    "alt": "home_picture_3"
+  },
+  {
+    "src": "img/home/4.jpg",
+    "alt": "home_picture_4",
+    "span": 2
+  },
+  {
+    "src": "img/home/5.jpg",
+    "alt": "home_picture_5",
+    "span": 2
+  },
+  {
+    "src": "img/home/6.jpg",
+    "alt": "home_picture_6"
+  }
+]
