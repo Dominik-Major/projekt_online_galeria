@@ -22,23 +22,26 @@
         <!--button group for selecting image 'folder' to display-->
         <div class="container py-4 text-center">
           <div class="btn-group mb-4" role="group">
-            <button class="btn btn-outline-dark" data-folder="events">Events</button>
-            <button class="btn btn-outline-dark" data-folder="nature">Nature</button>
-            <button class="btn btn-outline-dark" data-folder="street">Street Photography</button>
+            <button class="btn btn-outline-dark" data-category="events">Events</button>
+            <button class="btn btn-outline-dark" data-category="nature">Nature</button>
+            <button class="btn btn-outline-dark" data-category="street">Street Photography</button>
           </div>
           <!--container for generated images. img tags added here through gallery.js-->
-          <div id="masonry-gallery"></div>
-        </div>
+          <?php
+          include "parts/functions.php";
+            $category = $_GET["category"] ?? null;
+            renderMasonryGallery("data/gallery.json", $category);
+          ?>
         <!--lightbox for viewing enlarged images. X button for closing lightbox-->
         <div id="lightbox" class="d-none">
           <span id="lightbox-close">&times;</span>
           <img id="lightbox-img" src="" alt="Full view">
         </div>
+        </div>
 
     </main>
     <?php include "parts/footer.php" ?>
     <!--Links to js files-->
-    <script src="js/generated_gallery.js"></script>
     <script src="js/common.js"></script>
     <script src="js/gallery.js"></script>
 </body>
