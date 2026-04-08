@@ -1,0 +1,31 @@
+/*accordion title style*/
+.Q{
+    background-color: rgb(230, 230, 230);
+    color: black;
+    padding: 2%;
+}
+/*default class of the A part of the accordion.*/
+.accordion .A{
+    display: none;
+}
+/*symbol showing state of accordion*/
+.Q::before{
+    content: "+";
+}
+/*title styling on hover*/
+.Q:hover,
+.accordion.active .Q{
+    background-color: rgb(190, 190, 190);
+    cursor: pointer;
+}
+/*display hidden part of accordion with styling*/
+.accordion.active .A{
+    display: block;
+    background-color: white;
+    color: black;
+    padding: 2%;
+}
+/*symbol showing state of accordion*/
+.accordion.active .Q::before{
+    content: "-";
+}

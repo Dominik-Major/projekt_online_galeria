@@ -1,0 +1,123 @@
+/*fixed navbar style so it stays on screen at all times*/
+.left-vertical-navbar 
+{
+  width: 220px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  border-right: 1px solid rgb(180, 180, 180);
+  background: rgb(240, 240, 240);
+  padding-top: 1rem;
+}
+/*style for links*/
+.nav-link-custom {
+  display: block;
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s;
+}
+.nav-link-custom:hover {
+  color: rgb(100, 100, 100);
+}
+/*hamburger button design*/
+.hamburger-btn 
+{
+  border: none;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger-btn span 
+{
+  width: 25px;
+  height: 3px;
+  background: black;
+  transition: 0.3s;
+}
+/*hidden mobile menu on large screens + styling*/
+.mobile-menu 
+{
+  display: none;
+  flex-direction: column;
+  background: rgb(240, 240, 240);
+  padding: 15px;
+  border-top: 1px solid rgb(180, 180, 180);
+  margin-top: 65px;
+}
+
+.mobile-menu a 
+{
+  padding: 10px 0;
+  text-decoration: none;
+}
+/*class for displaying mobile menu on small creens*/
+.mobile-menu.open 
+{
+  display: flex;
+}
+.mobile-navbar
+{
+  background-color: rgb(255, 255, 255);
+}
+/*padding for page content because of fixed navbar. Horizontal on lg screens, vertical on sm screens*/
+main, footer
+{
+  padding-left: 220px;
+}
+@media (max-width: 992px) 
+{
+  main, footer {
+    padding-left: 0;
+    padding-top: 4.7rem;
+  }
+}
+/*grid layout and styling*/
+.gallery-grid 
+{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);/*3 collumns repeating while more than 3 objects remain, each taking up the same ammount of space*/
+  gap: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+/*image styling*/
+.gallery-grid img 
+{
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 2px 1px 5px rgb(100, 100, 100);
+}
+/*class for horizontal images to take up 2 collumns on large screens*/
+.gallery-grid img.span-2
+{
+  grid-column: span 2;
+}
+/*resizing the grid for smaller screens. 2 collumns for medium size creens, 1 collumn for mobile devices*/
+@media (max-width: 992px)
+{
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid img.span-2 {
+    grid-column: span 2;
+  }
+}
+@media (max-width: 576px) 
+{
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid img.span-2 {
+    grid-column: span 1;
+  }
+}
