@@ -30,7 +30,7 @@
           <?php
           include "parts/functions.php";
             $category = $_GET["category"] ?? null;
-            renderMasonryGallery("data/gallery.json", $category);
+            renderMasonryGallery("data/gallery.json");
           ?>
         <!--lightbox for viewing enlarged images. X button for closing lightbox-->
         <div id="lightbox" class="d-none">

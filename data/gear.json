@@ -1,0 +1,75 @@
+{
+  "camera_1": {
+    "title": "CAMERA 1 & LENSES",
+    "items": [
+      {
+        "img": "img/gear/body_1.png",
+        "name": "NIKON D3300",
+        "release": "January 7, 2014",
+        "desc": "An older model. This was my first ever DSLR camera, already a bit outdated by the time I bought it, however a brilliant and affordable entry level camera.",
+        "price": "600€ (new), 200-400€ (used)",
+        "link": "https://allegro.sk/produkt/zrkadlovka-nikon-d3300-telo-objektiv-482ef34f-0660-4c98-ac16-e1e391ced49f?offerId=17606543776&utm_feed=547ce2b2-2e28-4773-9707-58218068540e&utm_source=google&utm_medium=freelisting"
+      },
+      {
+        "img": "img/gear/lens_1.webp",
+        "name": "NIKON 18-55mm",
+        "release": "2005",
+        "desc": "A kit lens which usually comes with the camera body. A cheaper option than more specific, high end lenses, but an adequate choice regardless.",
+        "price": "50-150€",
+        "link": "https://www.mpb.com/en-eu/product/nikon-af-s-dx-nikkor-18-55mm-f-3-5-5-6g-vr/sku-3414921?utm_source=google&utm_medium=cpc&utm_campaign=EU%7CGoogle%7CBuy%7CPmax%7CEN&gclsrc=aw.ds&gad_source=1&gad_campaignid=20308286376&gbraid=0AAAAApa3MKsZX1WJP1cY6Uena2hXwZ2gm&gclid=CjwKCAiA3L_JBhAlEiwAlcWO558ADEWlRBCjn-s8ZZBQ_rPQ3QQS82LfBG7yEgutqKmrzQYtS40RIRoC61AQAvD_BwE"
+      }
+    ]
+  },
+
+  "camera_2": {
+    "title": "CAMERA 2 & LENSES",
+    "items": [
+      {
+        "img": "img/gear/body_2.webp",
+        "name": "Sony A6100",
+        "release": "2019",
+        "desc": "A mirrorless camera with more modern features, still in the affordable price range.",
+        "price": "800€",
+        "link": "https://www.alza.sk/sony-alpha-a6100-telo-d12796561.htm?kampan=adwalz_alza_pla_all_poor-perfomers_poor-perfomers_c_9209983_OS074b11_~164564303476~&gad_source=1&gad_campaignid=21455705738&gbraid=0AAAAAD2xsm6o6zpgRZhnOlsT1RnvRkIi2&gclid=CjwKCAiA3L_JBhAlEiwAlcWO54gsvdBr7g87cf-B-FzYtBVvxHVGyIOZ2Eo5UmQ070Y6W2RTxHVaPBoC7XQQAvD_BwE"
+      },
+      {
+        "img": "img/gear/lens_3.webp",
+        "name": "Viltrox AF 25 mm f/1.7",
+        "release": "2023",
+        "desc": "Third party lens. An upgrade from kit lenses but still affordable.",
+        "price": "180€",
+        "link": "https://www.film-technika.com/sk/sony-e-mount/viltrox-af-25mm-f1-7-aps-c-objektiv--sony-e-/?gad_source=1&gad_campaignid=20079700048&gbraid=0AAAAADmFACIsEqw3Kaa853MD5KCeYly_v&gclid=CjwKCAjwnN3OBhA8EiwAfpTYepkqUkSgj9RXN5gKpZMJgR_izOE3egfVDqbkDjBGWX9MngvxLDTNxxoC_lcQAvD_BwE"
+      },
+      {
+        "img": "img/gear/lens_4.webp",
+        "name": "Sony 55 – 210 mm F4,5 – 6,3",
+        "release": "2011",
+        "desc": "A telephoto lens for with longer focal lenghts for those far shots.",
+        "price": "270€",
+        "link": "https://www.alza.sk/sony-55-210-mm-f4-5-6-3-cierny-d530195.htm?kampan=adwdfv_digitalni-foto-video_pla_all_digitalne-foto-video_objektivy-a-filtre_c_9209983__OS030m1_v&gad_source=1&gad_campaignid=21459517418&gbraid=0AAAAAD2xsm4cND8IQNzm3hC9XUIOFEX_n&gclid=CjwKCAiA3L_JBhAlEiwAlcWO53PHlyQ_beRFFf568ufX3KLlme9J-57KrFo0j4mqBWd_i39ByUO8MxoC_JQQAvD_BwE"
+      }
+    ]
+  },
+
+  "extras": {
+    "title": "EXTRAS",
+    "items": [
+      {
+        "img": "img/gear/extra_1.webp",
+        "name": "Hama Star 62 Tripod",
+        "release": "2011",
+        "desc": "A good affordable tripod",
+        "price": "50€",
+        "link": "https://allegro.sk/produkt/tripod-hama-star-62-160-cm-hnedy-0b03a901-75c8-4f26-bc13-18e0c3903df8?offerId=17671269929&utm_feed=547ce2b2-2e28-4773-9707-58218068540e&utm_source=google&utm_medium=cpc&utm_campaign=SK%3EElectro%3EHome-electro%3E3P%3EPMAX&ev_campaign_id=21066407971&gad_source=1&gad_campaignid=21056448453&gbraid=0AAAAAqKvbIjlG8Bj-spO6J7wpIL_kF8BU&gclid=CjwKCAiA3L_JBhAlEiwAlcWO5zLOJ60bCthJg-r0oAN2ieVtnAn09A1kDs8YqoDhP_236fU0WCrG2RoCRj4QAvD_BwE"
+      },
+      {
+        "img": "img/gear/extra_3.webp",
+        "name": "Iphone 15",
+        "release": "2023",
+        "desc": "For editing, posting, managing images. Also, with phone cameras getting better and better every year, sometimes a phone is all you need.",
+        "price": "700€",
+        "link": "https://www.alza.sk/iphone-15-128-gb-cierny-d7927612.htm"
+      }
+    ]
+  }
+}
