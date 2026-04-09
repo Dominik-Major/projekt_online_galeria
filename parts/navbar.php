@@ -1,6 +1,6 @@
 <!--Vertical navbar for large screen. Logo & links-->
 <nav class="left-vertical-navbar d-none d-lg-flex flex-column align-items-center p-3">
-    <a href="index.html">
+    <a href="index.php">
     <img src="img/logo.png" alt="Logo" class="img-fluid">
     </a>
       <div class="d-flex flex-column align-items-center justify-content-between w-100 mt-4">
@@ -12,7 +12,7 @@
     </nav>
     <!--Vertical navbar for mobile devices hidden until opened by hamburger button-->
     <nav class="mobile-navbar d-lg-none d-flex justify-content-between align-items-center p-3 fixed-top">
-        <a href="index.html">
+        <a href="index.php">
           <img src="img/logo.png" alt="Logo" class="img-fluid">
         </a>
         <!--Hamburger button-->
