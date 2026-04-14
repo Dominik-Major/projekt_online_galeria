@@ -1,3 +1,8 @@
+<?php
+$config = require __DIR__ . "/config.php";
+require_once __DIR__ . "/parts/functions.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
