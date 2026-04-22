@@ -20,7 +20,7 @@ require_once __DIR__ . "/parts/functions.php";
 <body>
     <div class="container w-50 text-center mt-5">
         <h1 class="text-center fw-semibold">Thank you for reaching out. We will be in touch.</h1>
-        <a href="contact.html" class="btn btn-dark mt-4">Back to Contact Form</a>
+        <a href="contact.php" class="btn btn-dark mt-4">Back to Contact Form</a>
     </div>
 </body>
 </html>
