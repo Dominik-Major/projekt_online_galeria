@@ -36,8 +36,7 @@ const form = document.getElementById('contactForm');
                 valid = false;
             }
 
-            //redirect if all valid
             if (valid) {
-                window.open('thankyou.html', '_blank');
+                form.submit();
             }
         });

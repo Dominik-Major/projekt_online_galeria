@@ -34,23 +34,23 @@ require_once __DIR__ . "/parts/functions.php";
       </div>
       <!--container for the form that centers the elements.-->
       <div class="container mt-5">
-        <form id="contactForm" novalidate class="mt-4">
+        <form id="contactForm" class="mt-4" method="post" action="db/spracovanieFormulara.php">
             <!--name input-->
             <div class="mb-3">
                 <label for="name" class="form-label">*Name</label>
-                <input type="text" id="name" name="name" class="form-control" required>
+                <input type="text" id="name" name="name" class="form-control" novalidate>
                 <div class="text-danger small" id="nameError"></div>
             </div>
             <!--e-mail input-->
             <div class="mb-3">
                 <label for="email" class="form-label">*Email</label>
-                <input type="email" id="email" name="email" class="form-control" required>
+                <input type="email" id="email" name="email" class="form-control" novalidate>
                 <div class="text-danger small" id="emailError"></div>
             </div>
             <!--optional text area-->
             <div class="mb-3">
                 <label for="message" class="form-label">Message (optional)</label>
-                <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+                <textarea id="message" name="message" rows="5" class="form-control" novalidate></textarea>
                 <div class="text-danger small" id="messageError"></div>
             </div>
             <!--checkbox-->

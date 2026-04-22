@@ -94,3 +94,48 @@ function renderMasonryGallery($jsonPath, $category = null) {
 
     echo '</div>';
 }
+
+function renderGearAccordion(array $gear): void {
+    foreach ($gear as $category => $items) {
+        ?>
+        <div class="accordion border rounded-top mb-3">
+            <div class="Q fs-3 fw-semibold">
+                <?= htmlspecialchars($category) ?>
+            </div>
+
+            <div class="A">
+                <?php foreach ($items as $item): ?>
+                    <div class="row align-items-center justify-content-center g-4 mb-4">
+
+                        <div class="col-12 col-md-6 text-center">
+                            <img src="<?= htmlspecialchars($item['image']) ?>" 
+                                 class="img-fluid rounded">
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <h2><?= htmlspecialchars($item['title']) ?></h2>
+
+                            <p>Release Date: 
+                                <?= htmlspecialchars($item['release_date']) ?>
+                            </p>
+
+                            <p><?= htmlspecialchars($item['description']) ?></p>
+
+                            <p>Price: <?= htmlspecialchars($item['price']) ?>€</p>
+
+                            <?php if (!empty($item['link'])): ?>
+                                <a href="<?= htmlspecialchars($item['link']) ?>" 
+                                   target="_blank" 
+                                   class="btn btn-dark">
+                                   Available link
+                                </a>
+                            <?php endif; ?>
+                        </div>
+
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <?php
+    }
+}
