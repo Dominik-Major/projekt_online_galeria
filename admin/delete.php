@@ -1,29 +1,33 @@
 <?php
+
 require "auth.php";
 
 $config = require __DIR__ . "/../config.php";
 
-$category = $_POST["category"];
-$image = $_POST["image"];
+require_once __DIR__ . "/../db/GalleryRepository.php";
+require_once __DIR__ . "/../db/FileUploader.php";
 
-$filePath = $config["upload_path"] . "$category/$image";
-
-if (file_exists($filePath)) {
-    unlink($filePath);
-}
-
-// update JSON
-$data = json_decode(file_get_contents($config["gallery_file"]), true);
-
-$data[$category] = array_values(array_filter(
-    $data[$category],
-    fn($img) => $img !== $image
-));
-
-file_put_contents(
-    $config["gallery_file"],
-    json_encode($data, JSON_PRETTY_PRINT)
+$galleryRepo = new GalleryRepository(
+    $config["files"]["gallery_file"]
 );
 
+$uploader = new FileUploader($config["upload"]);
+
+$category = $_POST["category"] ?? '';
+$image = $_POST["image"] ?? '';
+
+// ochrana proti prázdnym dátam
+if ($category === '' || $image === '') {
+    die("Invalid request");
+}
+
+// 1. vymazanie súboru
+$filePath = $config["upload"]["upload_path"] . $category . "/" . $image;
+$uploader->delete($filePath);
+
+// 2. vymazanie z JSON databázy
+$galleryRepo->deleteImage($category, $image);
+
+// 3. redirect späť
 header("Location: dashboard.php");
 exit;

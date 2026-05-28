@@ -1,7 +1,16 @@
 <?php
+
 require "auth.php";
+
 $config = require __DIR__ . "/../config.php";
-require_once __DIR__ . "/../parts/functions.php";
+
+require_once __DIR__ . "/../db/GalleryRepository.php";
+
+$galleryRepo = new GalleryRepository(
+    $config["files"]["gallery_file"]
+);
+
+$data = $galleryRepo->getAll();
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +21,6 @@ require_once __DIR__ . "/../parts/functions.php";
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- tvoje CSS -->
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/index.css">
 </head>
@@ -23,66 +31,77 @@ require_once __DIR__ . "/../parts/functions.php";
 
 <main class="content-wrapper">
 
-    <div class="container py-5">
+<div class="container py-5">
 
-        <h1 class="text-center fw-semibold mt-5">ADMIN DASHBOARD</h1>
+    <h1 class="text-center fw-semibold mt-5">ADMIN DASHBOARD</h1>
 
-        <p class="text-center mb-5">
-            Welcome, <?= $_SESSION["user"] ?>
-        </p>
+    <p class="text-center mb-5">
+        Welcome, <?= $_SESSION["user"] ?>
+    </p>
 
-        <!-- UPLOAD -->
-        <div class="card p-4 mb-5">
-            <h3>Upload Image</h3>
+    <!-- UPLOAD -->
+    <div class="card p-4 mb-5">
 
-            <form action="upload.php" method="POST" enctype="multipart/form-data">
+        <h3>Upload Image</h3>
 
-                <select name="category" class="form-select mb-2">
-                    <option value="events">Events</option>
-                    <option value="nature">Nature</option>
-                    <option value="street">Street</option>
-                </select>
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
 
-                <input type="file" name="image" class="form-control mb-2">
+            <select name="category" class="form-select mb-2">
+                <option value="events">Events</option>
+                <option value="nature">Nature</option>
+                <option value="street">Street</option>
+            </select>
 
-                <button class="btn btn-dark">Upload</button>
-            </form>
-        </div>
+            <input type="file" name="image" class="form-control mb-2">
 
-        <!-- GALLERY MANAGEMENT -->
-        <div class="card p-4">
+            <button class="btn btn-dark">
+                Upload
+            </button>
 
-            <h3>Manage Gallery</h3>
+        </form>
+    </div>
 
-            <?php
-            $data = json_decode(file_get_contents($config["gallery_file"]), true);
+    <!-- GALLERY -->
+    <div class="card p-4">
 
-            foreach ($data as $category => $images):
+        <h3>Manage Gallery</h3>
 
-                echo "<h4 class='mt-4'>$category</h4><div class='d-flex flex-wrap'>";
+        <?php foreach ($data as $category => $images): ?>
 
-                foreach ($images as $img):
+            <h4 class="mt-4"><?= htmlspecialchars($category) ?></h4>
 
-                    echo "
-                    <div class='m-2 text-center'>
-                        <img src='../img/gallery/$category/$img' width='120' class='rounded'><br>
+            <div class="d-flex flex-wrap">
 
-                        <form method='POST' action='delete.php'>
-                            <input type='hidden' name='category' value='$category'>
-                            <input type='hidden' name='image' value='$img'>
-                            <button class='btn btn-sm btn-danger mt-1'>Delete</button>
+                <?php foreach ($images as $img): ?>
+
+                    <div class="m-2 text-center">
+
+                        <img src="../img/gallery/<?= $category ?>/<?= $img ?>"
+                             width="120"
+                             class="rounded">
+
+                        <form method="POST" action="delete.php">
+
+                            <input type="hidden" name="category" value="<?= $category ?>">
+                            <input type="hidden" name="image" value="<?= $img ?>">
+
+                            <button class="btn btn-sm btn-danger mt-1">
+                                Delete
+                            </button>
+
                         </form>
-                    </div>";
-                endforeach;
 
-                echo "</div>";
+                    </div>
 
-            endforeach;
-            ?>
+                <?php endforeach; ?>
 
-        </div>
+            </div>
+
+        <?php endforeach; ?>
 
     </div>
+
+</div>
 
 </main>
 
