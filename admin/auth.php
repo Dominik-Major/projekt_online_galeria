@@ -1,9 +1,13 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
 
-if (!isset($_SESSION["user"])) {
+session_start();
+
+require_once __DIR__ . "/../db/Auth.php";
+
+$auth = new Auth();
+
+if (!$auth->check()) {
+
     header("Location: login.php");
     exit;
 }

@@ -3,14 +3,14 @@
 $config = require __DIR__ . "/config.php";
 require_once __DIR__ . "/parts/functions.php";
 
-require_once __DIR__ . "/db/connection.php";
+require_once __DIR__ . "/db/Database.php";
 require_once __DIR__ . "/db/gear.php";
 
-// PDO pripojenie
-$conn = getPDO($config['db']);
+$db = new Database($config['db']);
 
-// načítanie dát
-$gear = getGearData($conn);
+$gearRepo = new GearRepository($db);
+
+$gear = $gearRepo->getAllGroupedByCategory();
 ?>
 
 <!DOCTYPE html>
@@ -36,14 +36,14 @@ $gear = getGearData($conn);
         <h1 class="text-center fw-semibold mt-5">MY CAMERA KIT</h1>
         <!--container for the accordions. Adds padding and controllable width of the entire element-->
         <div class="container w-50 py-5">
-    <p class="text-center fs-5 mb-5">
-        This section is dedicated to my camera gear. 
-          From my everyday carry, to my setup on special occasions, 
-          every piece is mentioned including camera bodies, lenses, accessories and some extra items of use. 
-    </p>
+            <p class="text-center fs-5 mb-5">
+                This section is dedicated to my camera gear. 
+                From my everyday carry, to my setup on special occasions, 
+                every piece is mentioned including camera bodies, lenses, accessories and some extra items of use. 
+            </p>
 
-    <?php renderGearAccordion($gear); ?>
-</div>
+            <?php renderGearAccordion($gear); ?>
+        </div>
     </main>
     <?php include "parts/footer.php" ?>
     <!--Links to js files-->
