@@ -3,38 +3,42 @@
 class GalleryRepository
 {
     public function __construct(
-        private string $filePath
+        private Database $db
     ) {}
 
     public function getAll(): array
     {
-        return json_decode(file_get_contents($this->filePath), true);
+        $rows = $this->db->fetchAll(
+            "SELECT * FROM images ORDER BY category"
+        );
+
+        $result = [];
+
+        foreach ($rows as $row) {
+            $result[$row["category"]][] = $row["filename"];
+        }
+
+        return $result;
     }
 
-    public function save(array $data): void
+    public function addImage(string $category, string $filename): void
     {
-        file_put_contents(
-            $this->filePath,
-            json_encode($data, JSON_PRETTY_PRINT)
+        $this->db->query(
+            "INSERT INTO images (category, filename) VALUES (?, ?)",
+            [$category, $filename]
         );
     }
 
-    public function addImage(string $category, string $fileName): void
+    public function deleteImage(string $category, string $filename): void
     {
-        $data = $this->getAll();
-        $data[$category][] = $fileName;
-        $this->save($data);
+        $this->db->query(
+            "DELETE FROM images WHERE category = ? AND filename = ?",
+            [$category, $filename]
+        );
     }
 
-    public function deleteImage(string $category, string $fileName): void
+    public function getImageUrl(string $category, string $filename): string
     {
-        $data = $this->getAll();
-
-        $data[$category] = array_values(array_filter(
-            $data[$category],
-            fn($img) => $img !== $fileName
-        ));
-
-        $this->save($data);
+        return BASE_URL . "/img/gallery/$category/$filename";
     }
 }

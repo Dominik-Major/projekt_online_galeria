@@ -4,12 +4,11 @@ require "auth.php";
 
 $config = require __DIR__ . "/../config.php";
 
+require_once __DIR__ . "/../db/Database.php";
 require_once __DIR__ . "/../db/GalleryRepository.php";
 
-$galleryRepo = new GalleryRepository(
-    $config["files"]["gallery_file"]
-);
-
+$db = new Database($config["db"]);
+$galleryRepo = new GalleryRepository($db);
 $data = $galleryRepo->getAll();
 ?>
 
