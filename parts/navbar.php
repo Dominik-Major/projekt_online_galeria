@@ -1,5 +1,4 @@
 <?php
-// ak session ešte nie je spustená
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -17,10 +16,13 @@ if (session_status() === PHP_SESSION_NONE) {
         <a href="<?= BASE_URL ?>/gear.php" class="nav-link-custom">My Gear</a>
         <a href="<?= BASE_URL ?>/contact.php" class="nav-link-custom">Contact</a>
 
-    <?php if (isset($_SESSION["user"])): ?>
+    <?php if (isset($_SESSION["role"]) && $_SESSION["role"] === "admin"): ?>
         <a class="nav-link-custom text-warning" href="<?= BASE_URL ?>/admin/dashboard.php">
             Admin
         </a>
+    <?php endif; ?>
+    
+    <?php if (isset($_SESSION["user"])): ?>
         <a class="nav-link-custom text-danger" href="<?= BASE_URL ?>/admin/logout.php">
             Logout
         </a>
@@ -35,8 +37,8 @@ if (session_status() === PHP_SESSION_NONE) {
 <!-- MOBILE -->
 <nav class="mobile-navbar d-lg-none d-flex justify-content-between align-items-center p-3 fixed-top">
 
-    <a href="/index.php">
-        <img src="/img/logo.png" alt="Logo" class="img-fluid">
+    <a href="<?= BASE_URL ?>/index.php">
+        <img src="<?= BASE_URL ?>/img/logo.png" alt="Logo" class="img-fluid">
     </a>
 
     <button class="hamburger-btn" id="hamburgerBtn">

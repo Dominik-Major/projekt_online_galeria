@@ -26,7 +26,6 @@ class FileUploader
             die("Upload folder does not exist: " . $targetDir);
         }
 
-        // 5. upload
         $success = move_uploaded_file(
             $file["tmp_name"],
             $targetDir . $fileName

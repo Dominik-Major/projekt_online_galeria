@@ -71,7 +71,6 @@ function renderMasonryGallery($jsonPath, $category = null) {
 
     foreach ($data as $catName => $images) {
 
-        // filter category
         if ($category && $category !== $catName) {
             continue;
         }

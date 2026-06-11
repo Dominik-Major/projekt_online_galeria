@@ -7,7 +7,7 @@
   },
   {
     "desktop": "img/carousel/2.JPEG",
-    "mobile": "img/home/3.JPEG",
+    "mobile": "img/home/3.jpg",
     "class": "c_2",
     "alt": "carousel_picture_2"
   },
@@ -19,13 +19,13 @@
   },
   {
     "desktop": "img/carousel/4.JPEG",
-    "mobile": "img/home/7.jpg",
+    "mobile": "img/home/1.jpg",
     "class": "c_4",
     "alt": "carousel_picture_4"
   },
   {
     "desktop": "img/carousel/5.JPEG",
-    "mobile": "img/home/8.JPEG",
+    "mobile": "img/home/4.jpg",
     "class": "c_5",
     "alt": "carousel_picture_5"
   }

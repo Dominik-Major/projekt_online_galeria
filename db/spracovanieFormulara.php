@@ -22,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("Vyplň všetky polia");
     }
 
-    // OOP insert
     $formRepo->insert($name, $email, $message);
 
     header("Location: " . BASE_URL . "/thankyou.php");

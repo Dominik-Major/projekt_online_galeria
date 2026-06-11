@@ -10,10 +10,8 @@ $galleryRepo = new GalleryRepository($db);
 
 $category = $_GET["category"] ?? null;
 
-// vždy dostaneme rovnakú štruktúru: [category => [images]]
 $all = $galleryRepo->getAll();
 
-// filter
 $images = $category ? [$category => ($all[$category] ?? [])] : $all;
 
 ?>
