@@ -8,28 +8,33 @@ class FileUploader
 
     public function upload(array $file, string $category): string
     {
-        // 1. validácia typu
+
         if (!in_array($file["type"], $this->config["allowed_types"])) {
             die("Invalid file type");
         }
 
-        // 2. validácia veľkosti
         if ($file["size"] > $this->config["max_size"]) {
             die("File too large");
         }
 
-        // 3. vytvorenie názvu súboru
         $ext = pathinfo($file["name"], PATHINFO_EXTENSION);
         $fileName = uniqid("img_", true) . "." . $ext;
 
-        // 4. cesta uloženia
-        $targetDir = $this->config["upload_path"] . $category . "/";
+        $targetDir = rtrim($this->config["upload_path"], "/") . "/" . $category . "/";
 
-        // 5. presun súboru
-        move_uploaded_file(
+        if (!is_dir($targetDir)) {
+            die("Upload folder does not exist: " . $targetDir);
+        }
+
+        // 5. upload
+        $success = move_uploaded_file(
             $file["tmp_name"],
             $targetDir . $fileName
         );
+
+        if (!$success) {
+            die("Upload failed");
+        }
 
         return $fileName;
     }
