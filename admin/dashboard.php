@@ -34,10 +34,6 @@ $data = $galleryRepo->getAll();
 
     <h1 class="text-center fw-semibold mt-5">ADMIN DASHBOARD</h1>
 
-    <p class="text-center mb-5">
-        Welcome, <?= $_SESSION["user"] ?>
-    </p>
-
     <!-- UPLOAD -->
     <div class="card p-4 mb-5">
 

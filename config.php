@@ -1,6 +1,8 @@
 <?php
 
-define("BASE_URL", "/projekt_online_galeria");
+if (!defined('BASE_URL')) {
+    define("BASE_URL", "/projekt_online_galeria");
+}
 
 return [
     'db' => [

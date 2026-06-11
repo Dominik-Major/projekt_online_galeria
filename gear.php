@@ -34,7 +34,6 @@ $gear = $gearRepo->getAllGroupedByCategory();
   <?php include "parts/navbar.php" ?>
     <main>
         <h1 class="text-center fw-semibold mt-5">MY CAMERA KIT</h1>
-        <!--container for the accordions. Adds padding and controllable width of the entire element-->
         <div class="container w-50 py-5">
             <p class="text-center fs-5 mb-5">
                 This section is dedicated to my camera gear. 
@@ -46,7 +45,6 @@ $gear = $gearRepo->getAllGroupedByCategory();
         </div>
     </main>
     <?php include "parts/footer.php" ?>
-    <!--Links to js files-->
     <script src="js/common.js"></script>
     <script src="js/gear.js"></script>
 </body>
