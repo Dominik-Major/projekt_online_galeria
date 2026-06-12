@@ -31,7 +31,6 @@ class Database
         return $this->pdo;
     }
 
-    // univerzálny query helper (najdôležitejšia časť)
     public function query(string $sql, array $params = []): PDOStatement
     {
         $stmt = $this->pdo->prepare($sql);

@@ -1,5 +1,4 @@
 <footer>
-      <!--footer containing info and copyright of page-->
       <div class="gallery-grid">
         <div class="contaiener text-center text-secondary mt-5">
           <p>Content:</p>

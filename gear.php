@@ -26,7 +26,6 @@ $gear = $gearRepo->getAllGroupedByCategory();
     rel="stylesheet" 
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
     crossorigin="anonymous">
-    <!--custom css after bootstrap to ovverwrite certain styles-->
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/gear.css">
 </head>
