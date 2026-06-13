@@ -63,37 +63,6 @@ function renderHomeGallery($jsonPath) {
     echo '</div>';
 }
 
-function renderMasonryGallery($jsonPath, $category = null) {
-
-    $data = json_decode(file_get_contents($jsonPath), true);
-
-    echo '<div id="masonry-gallery">';
-
-    foreach ($data as $catName => $images) {
-
-        if ($category && $category !== $catName) {
-            continue;
-        }
-
-        foreach ($images as $img) {
-
-            $src = "img/gallery/$catName/$img";
-            $version = file_exists($src) ? filemtime($src) : time();
-
-            echo '<div class="masonry-item" data-category="' . $catName . '">
-                    <img 
-                        src="' . $src . '?v=' . $version . '" 
-                        class="gallery-item"
-                        loading="lazy"
-                        alt="' . $img . '"
-                    >
-                  </div>';
-        }
-    }
-
-    echo '</div>';
-}
-
 function renderGearAccordion(array $gear): void {
     foreach ($gear as $category => $items) {
         ?>
