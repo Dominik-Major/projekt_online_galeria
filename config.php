@@ -8,7 +8,7 @@ return [
     'db' => [
         'host' => 'localhost',
         'user' => 'root',
-        'port' => '3307',
+        'port' => '3306',
         'pass' => '',
         'name' => 'projekt_sj'
     ],
